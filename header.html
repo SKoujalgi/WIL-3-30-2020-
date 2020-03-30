@@ -1,0 +1,237 @@
+<?php # Script 18.1 - header.html
+// This page begins the HTML header for the site.
+
+// Start output buffering:
+ob_start();
+
+// Initialize a session:
+session_start();
+
+// Check for a $page_title value:
+if (!isset($page_title)) {
+	$page_title = 'Welcome to WIL';
+}
+?>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery.min.js"></script> 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<!--	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
+<!--	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="includes/layout.css">
+
+<title><?php echo $page_title; ?></title>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+<div id="Heading" Class="media">
+		
+	<div class="media-left media-middle">
+		<?php 
+		  $logo_image_file=BASE_URL.IMAGES_SUBDIR.SITE_LOGO_FILE;
+		 echo '<a href="index.php">
+		 <img src="'.$logo_image_file.'" class="media-object" style="width:128px">
+		 </a>';
+		 ?>
+	</div>
+		<div style="color: navy;" class="media-body text-center">
+			<h3><b>Women In Licensing</b></h3>
+			<h4>Support and Succeed together!!</h4>
+			
+			<?php 
+                if (isset($_SESSION['user_id'])) {
+                    if (CHECK_TIMEOUT) {
+                        echo '<p id="timeout" style="text-align:right"><span class="glyphicon glyphicon-user"></span> '.$_SESSION["first_name"].' '.$_SESSION["last_name"].'<br>'.'Idle Timer: '.TIMEOUT_IN_MINUTES.':00</p>';
+                    } else {
+                        echo '<p id="timeout" style="text-align:right"><span class="glyphicon glyphicon-user"></span> '.$_SESSION["first_name"].' '.$_SESSION["last_name"].'</p>';
+                    }
+                }
+               ?>
+			
+		</div>
+	
+</div>
+
+<nav class="navbar navbar-default" data-spy="affix" data-offset-top="197">
+		<div class="container-fluid">
+		  <div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>                        
+			</button>
+				<a class="navbar-brand" href="index.php"><dl>Women In Licensing</dl></a>
+		  </div>
+		  <div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.php">Home</a></li>
+				
+				
+				
+				<!--
+					<li><a href="about_WIL.php">About</a></li> -->
+
+				<!-- <li><a href="contact_WIL.php">Contact</a></li> -->
+				
+				<?php
+					// Display links based upon the login status:
+					if (isset($_SESSION['user_id'])) {
+					
+						// Add links if the user is an administrator:
+						if ($_SESSION['user_level'] >=4) {
+							echo '<!--<li class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#">Chapter<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="addCh.php">Add Chapter</a></li>
+										<li><a href="editCh.php">Edit</a></li>
+									 <li><a href="deleteCh.php">Delete</a></li>
+									</ul>
+								</li>
+
+								<li class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#">Event<span class="caret"></span></a>
+									 <ul class="dropdown-menu">
+										 <li><a href="addEv.php">Add Event</a></li>
+										 <li><a href="editEv.php">Edit</a></li>
+										 <li><a href="archiveEv.php">Archive Events</a></li>
+									 </ul>
+								 </li>
+
+								<li class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#">Sponsor<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="addSp.php">Add Sponsor</a></li>
+											<li><a href="editSp.php">Edit</a></li>
+											<li><a href="deleteSp.php">Delete</a></li>
+										</ul>
+								</li>
+
+								<li class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#">User<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="add_users.php">Add User</a></li>
+											<li><a href="edit_users.php">Edit </a></li>
+											<li><a href="delete_users.php">Delete </a></li>
+										</ul>
+									</li>-->
+
+									<li><a href="contact_WIL.php">Contact Us</a></li>
+
+									<li class="dropdown">
+											<a class="dropdown-toggle" data-toggle="dropdown" href="#">View<span class="caret"></span></a>
+										 <ul class="dropdown-menu">
+											 <li><a href="add_edit_view_events.php">Events</a></li>
+											 <li><a href="add_edit_view_members.php">Members</a></li>
+											 <li><a href="add_edit_view_sponsors.php">Sponsors</a></li>
+											 <li><a href="add_edit_view_chapter.php">Chapters</a></li>
+										 </ul>
+									 </li>
+
+								';
+						} elseif ($_SESSION['user_level'] >=3){
+							echo '
+
+                				<!-- <li class="dropdown">
+                   					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Event<span class="caret"></span></a>
+                    				<ul class="dropdown-menu">
+                        				<li><a href="addEv.php">Add Event</a></li>
+                        				<li><a href="editEv.php">Edit</a></li>
+                        			<li><a href="deleteEv.php">Delete</a></li> 
+                    				</ul>
+                				</li>
+
+                				<li class="dropdown">
+                    				<a class="dropdown-toggle" data-toggle="dropdown" href="#">User<span class="caret"></span></a>
+                    				<ul class="dropdown-menu">
+                        				<li><a href="add_users.php">Add User</a></li>
+                        				<li><a href="edit_users.php">Edit </a></li>
+                        			<li><a href="delete_users.php">Delete </a></li>
+                    				</ul>
+								</li>-->
+								<li><a href="contact_WIL.php">Contact</a></li>
+								
+								<li class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#">View<span class="caret"></span></a>
+									 <ul class="dropdown-menu">
+										 <li><a href="add_edit_view_events.php">Events</a></li>
+										 <li><a href="add_edit_view_members.php">Members</a></li>
+										 <li><a href="add_edit_view_chapter.php">Sponsors</a></li>
+									 </ul>
+								 </li>
+
+            					';
+						} elseif ($_SESSION['user_level'] >=2){
+							echo '
+							<li><a href="contact_WIL.php">Contact</a></li>	
+							
+                				<li class="dropdown">
+                   					<a class="dropdown-toggle" data-toggle="dropdown" href="#">View<span class="caret"></span></a>
+                    				<ul class="dropdown-menu">
+                        				<li><a href="view_events.php">Events</a></li>
+                        				<li><a href="view_members.php">Members</a></li>
+                        				<li><a href="view_sponsors.php">Sponsors</a></li>
+                    				</ul>
+                				</li>
+
+            					';
+						}elseif ($_SESSION['user_level'] >=1){
+							echo '
+							<li><a href="contact_WIL.php">Contact</a></li>	
+							
+								<li class="dropdown">
+									   <a class="dropdown-toggle" data-toggle="dropdown" href="#">View<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="view_events.php">Events</a></li>
+									</ul>
+								</li>
+	
+								';
+							}
+					}else{
+						echo'<li><a href="register.php"><span class="register"></span> Register</a></li> ';
+							
+					}
+				?>
+				<li class="dropdown">
+						<?php						
+						// Display links based upon the login status:
+						if (isset($_SESSION['user_id'])) {
+									echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Logout<span class="caret"></span></a>';
+						} else { 	
+							echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>';
+							
+						}
+						?>
+						<ul class="dropdown-menu">
+						
+						<?php						
+							// Display links based upon the login status:
+
+							if (isset($_SESSION['user_id'])) {
+								echo '<li><a href="change_password.php"><span class="glyphicon glyphicon-user"></span> Change Password</a></li>
+											<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
+							} else {
+							  echo '
+							  		<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+									<li><a href="forgot_password.php"><span class="glyphicon glyphicon-user"></span> Forgot Password</a></li>';
+							}
+							?>
+					</ul>
+				</li>
+			
+			</ul>
+		  </div>
+		</div>
+		</nav>	
+		  	
+<div id="Content">

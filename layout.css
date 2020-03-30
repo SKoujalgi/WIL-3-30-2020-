@@ -1,0 +1,335 @@
+/*---------- Header styling ----------*/
+h1{
+	margin:0px 0px 35px 0px;
+	padding:0px;
+	font-size:20px;
+	line-height:20px;
+	font-weight:200;
+	text-align: center;
+	color: navy;
+}
+
+h2{
+		font-size:15px;
+		color: navy;
+}
+
+h3{
+	color: navy;
+	text-align: center;
+}
+
+h4{
+		color:navy;
+		text-align: center;
+}
+
+h5{
+		color: red;
+}
+/*----------------------------------------------------------------*/
+
+
+/*   -------------- Body styling   -----------------------*/         
+body {
+	
+	padding: 32px 32px;
+		font-family:verdana, arial, helvetica, sans-serif;
+		
+		background-color:white;
+		}
+		
+/*  Table added for displaying data in Table format    TABLE1  */
+	table.table1{
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+	table.table1 td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	/*  Table added for displaying data in Table format    TABLE2  */
+	
+	table.table2{
+		font-family: "Times New Roman", Times, serif;
+		border-collapse: separate;
+		width: 400px;
+	}
+	
+	table.table2 td, th{
+
+		border: 1px solid #dddddd;
+		text-align: left;
+
+	}
+	
+/*------------------------------------*/
+
+p {
+	font:15x/20px verdana, arial, helvetica, sans-serif;
+	margin:0px 0px 16px 0px;
+	padding:0px;
+	color: navy;
+	}
+	
+/*#Content>p {margin:0px; text-indent:30px;}*/
+#Content>p { margin:0px; }
+a {
+	color:#0468ab;
+	text-decoration:none;
+	font-weight:600;
+	font-family:verdana, arial, helvetica, sans-serif;
+	}
+	
+
+a:link {color:rgb(198, 31, 231);}
+
+a:visited {color:darkred;}
+
+a:hover {background-color:whitesmoke;}
+
+#Loading {color:#07a;
+		  align-content: center;}
+
+#Header {
+	font-size:24px;
+	margin:50px 0px 10px 0px;
+	padding:17px 0px 0px 20px;
+	/* For IE5/Win's benefit height = [correct height] + [top padding] + [top and bottom border widths] */
+	height:350px; /* 14px + 17px + 2px = 33px */
+	line-height:15px;
+	background-color:#eee;
+
+/* Here is the ugly brilliant hack that protects IE5/Win from its own stupidity. 
+Thanks to Tantek Celik for the hack and to Eric Costello for publicizing it. 
+IE5/Win incorrectly parses the "\"}"" value, prematurely closing the style 
+declaration. The incorrect IE5/Win value is above, while the correct value is 
+below. See http://glish.com/css/hacks.asp for details. */
+	height:14px; /* the correct height */
+	}
+/* I've heard this called the "be nice to Opera 5" rule. Basically, it feeds correct 
+length values to user agents that exhibit the parsing error exploited above yet get 
+the CSS box model right and understand the CSS2 parent-child selector. ALWAYS include
+a "be nice to Opera 5" rule every time you use the Tantek Celik hack (above). */
+body>#Header {
+	height:50px;
+	background-color: white;
+	color: #0468ab;
+	text-align: center;
+	margin:  25px 0px 25px 0px;
+	padding: 5px 0px 5px 0px;
+}
+
+body>#Footer {
+	background-color:#36a0c0;
+	color:black;
+	text-align: center;
+	top: 100px;
+	width: 100%;
+	height: 50px;/* changed from 200px 4/3*/
+	bottom:0px; 
+}
+
+body>#Copyright {
+	background-color:silver;
+	color:black;
+	text-align: center;
+	top: 10px;
+	width: 100%;
+	height: 50px;/* changed from 100px 4/3*/
+	bottom:0px; 
+}
+
+#Content {
+	margin:0px 10px 50px 10px;
+	padding:10px;
+	}
+
+	
+
+
+.error {
+	color:#FF0033;
+	font-size:14px;
+	}
+
+  .affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+    padding-top: 70px;
+  }	
+
+.navbar {
+		margin-bottom: 0;
+		background-color: #36a0c0;
+		/*color: navy;*/
+		z-index: 9999;
+		border: 0;
+		border-radius: 0;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 14px;
+		}
+
+.navbar li a, .navbar .navbar-brand {
+	/* background-color: #0468ab;*/
+	color: white !important;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+.dropdown-menu li a {
+	background-color: white;
+	color:navy !important;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+/*	background-color: #0468ab; */
+	color: navy !important;
+	background-color: white !important;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+	color: #b902b9 !important;
+	background-color: white;
+}
+
+
+.jumbotron {
+	background-color: white;
+	color: blue;
+	margin:  25px 0px 25px 0px;
+	padding: 5px 0px 5px 0px;
+}
+
+
+
+/* ----------------WIL pages --------------- */
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+/* Create two unequal columns that floats next to each other */
+.column1 {
+	float: left;
+	padding:10px;
+	/*height: 200px; /* Should be removed. Only for demonstration */
+}
+.left {
+	width: 50%;
+  }
+  
+  .right {
+	width: 50%;
+  }
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+div.eventHeader{
+	width:100%;
+	background-color: rgb(216, 178, 231);
+}
+
+div.eventHeader span {
+	display: inline-block;
+	vertical-align: top;
+    *display:inline; /* hack for ie7 */
+	padding: 8px 3px 8px 10px;
+	height: 100%;
+}
+
+div.eventHeader span span {
+	display: inline;
+	line-height: inherit;
+	font-size: 12px;
+	line-height:14px;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+div.eventHeader span.city{
+
+	widows: 300px;
+	font: width 500;
+
+}
+
+div.eventHeader span.date{
+	width: 200px;
+
+}
+
+div.eventHeader span.time {
+
+	width : 120px;
+}
+
+
+/************************* This code is for Side bar in ChapterPage ************************/
+
+.menu {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.menu a {
+  background-color:rgb(211, 86, 211);
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+.main {
+  float:left;
+  width:80%;
+  padding:0 20px;
+}
+
+.right {
+  
+  float:left;
+  width:45%;
+  padding:15px;
+  margin-top:7px;
+  text-align:center;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+
+/* This is for padding the images in the Home page */
+img {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	width: 150px;
+  }
+  img:hover {
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+

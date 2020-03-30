@@ -1,0 +1,16 @@
+File Structure
+
+Sites-->
+  WIL--> mysqli_connect.php
+    html--> all php files
+      documents--> user_agreement.pdf
+      images--> all images files
+      includes--> config-inc.php
+                  header.html
+                  footer.html
+                  layout.css
+                  usagelog.php
+                  check_active_session.php
+                
+     
+          
